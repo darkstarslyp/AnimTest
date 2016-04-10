@@ -30,9 +30,10 @@ public class SimpleImgAdapter extends android.support.v4.view.PagerAdapter {
      */
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        container.addView(imgList.get(position));
+        ImageView image = imgList.get(position);
+        container.addView(image);
 
-        return imgList.get(position);
+        return image;
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.lyp.anim.pager;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,7 +10,7 @@ import android.widget.LinearLayout;
 import com.lyp.anim.BaseActivty;
 import com.lyp.anim.R;
 import com.lyp.anim.pager.adpter.SimpleImgAdapter;
-import com.lyp.anim.pager.tv.SmoothViewPager;
+import com.lyp.anim.pager.transformer.LeftScaleYPageTransformer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ import butterknife.OnClick;
 public class PagerActivity  extends BaseActivty{
 
     @Bind(R.id.view_pager)
-    SmoothViewPager mViewPager;
+    ViewPager mViewPager;
     @Bind(R.id.btn_control)
     Button mBtnControl;
 
@@ -54,7 +55,9 @@ public class PagerActivity  extends BaseActivty{
 
         adapter = new SimpleImgAdapter(this);
         mViewPager.setAdapter(adapter);
+        mViewPager.setPageTransformer(true, new LeftScaleYPageTransformer());
         mViewPager.setClickable(true);
+                mViewPager.getX();
         adapter.setData(list);
     }
 
