@@ -22,6 +22,12 @@ public class BaseActivty extends AppCompatActivity {
     void test(){
 
         View view ;
+//        getSupportFragmentManager().beginTransaction().setCustomAnimations()
 
     }
+
+//    @Override
+//    PendingTransition(int enterAnim, int exitAnim){
+//
+//    }
 }
